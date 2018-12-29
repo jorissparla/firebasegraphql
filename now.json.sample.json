@@ -1,0 +1,12 @@
+{
+  "env": {
+    "APIKEY": "X",
+    "AUTHDOMAIN": "X",
+    "DATABASEURL": "X",
+    "PROJECTID": " X",
+    "STORAGEBUCKET": "X",
+    "MESSAGINGSENDERID": "X"
+  },
+  "version": 2,
+  "builds": [{ "src": "index.js", "use": "@now/node-server", "config": { "maxLambdaSize": "20mb" } }]
+}
