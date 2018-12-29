@@ -2,6 +2,7 @@ type Query {
   hello(name: String): String!
   courses: [Course]
   gebruikers: [Gebruiker]
+  me: User!
 }
 
 type Gebruiker {
@@ -17,7 +18,22 @@ type Course {
   id: ID!
   title: String
 }
+
+type SuccessMessage {
+  message: String
+}
+type User {
+  id: ID!
+  email: String
+  password: String
+  name: String
+  photoURL: String
+}
 type Mutation {
   createCourse(title: String): Course
   createGebruiker(input: GebruikerInput): Gebruiker
+  signup(email: String!, password: String!, name: String, photoUrl: String): User!
+  signin(email: String!, password: String!): User!
+  signout: SuccessMessage
+  requestReset(email: String!): SuccessMessage
 }
