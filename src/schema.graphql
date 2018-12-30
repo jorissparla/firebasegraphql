@@ -17,10 +17,16 @@ input GebruikerInput {
 type Course {
   id: ID!
   title: String
+  date: String!
+  takenby: [User!]!
 }
 
 type SuccessMessage {
   message: String
+}
+input UserProfileInput {
+  name: String
+  photoURL: String
 }
 type User {
   id: ID!
@@ -29,11 +35,19 @@ type User {
   name: String
   photoURL: String
 }
+
+input CourseInput {
+  title: String!
+  date: String!
+}
+
 type Mutation {
-  createCourse(title: String): Course
+  createCourse(input: CourseInput): Course
   createGebruiker(input: GebruikerInput): Gebruiker
+  updateProfile(input: UserProfileInput): User!
   signup(email: String!, password: String!, name: String, photoUrl: String): User!
   signin(email: String!, password: String!): User!
   signout: SuccessMessage
   requestReset(email: String!): SuccessMessage
+  subscribetoCourse(courseId: ID): Course
 }
