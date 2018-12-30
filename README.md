@@ -1,13 +1,13 @@
-## Project using graphql-yoga and firebase to create a GraphQL Server
+# Project using graphql-yoga and firebase to create a GraphQL Server
 
-# Authentication functionality using
+## Authentication functionality using
 
 - signup
 - signin
 - signout
 
-# some query examples
+## some query examples
 
 - including nested queries
 
-# some mutation examples
+## some mutation examples
